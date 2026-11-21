@@ -14,6 +14,7 @@ import zlib
 
 W = 1024
 H = 1024
+ENTRY_NAME = "entry.png"
 
 PAPER = (248, 244, 234)
 INK = (22, 20, 18)
@@ -517,7 +518,7 @@ def main():
     data = render()
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "entry.png")
+    path = os.path.join(out_dir, ENTRY_NAME)
     with open(path, "wb") as fh:
         fh.write(data)
     print("wrote %s (%d bytes)" % (path, len(data)))
